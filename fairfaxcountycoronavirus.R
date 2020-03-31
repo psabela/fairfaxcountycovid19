@@ -23,11 +23,11 @@ df %>% ggplot() +
   geom_text(aes(x=ymd('2020-03-31'), label="\nStay at Home Order", y=50), colour="brown", angle=90, text=element_text(size=11)) +
   
   
-  geom_vline(xintercept = ymd('2020-03-30'),colour="blue", linetype="dotted") +
+  geom_vline(xintercept = ymd('2020-03-30'),colour="blue", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-03-30'), label="\n14 days after schools closed", y=50), colour="blue", angle=90, text=element_text(size=11)) +
-  geom_vline(xintercept = ymd('2020-04-06'),colour="red", linetype="dotted") +
+  geom_vline(xintercept = ymd('2020-04-06'),colour="red", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-04-06'), label="\n14 days after businesses and parks closed", y=60), colour="red", angle=90, text=element_text(size=11)) +
-  geom_vline(xintercept = ymd('2020-04-07'),colour="orange", linetype="dotted") +
+  geom_vline(xintercept = ymd('2020-04-07'),colour="orange", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-04-07'), label="\n14 days after Gov buildings closed", y=50), colour="orange", angle=90, text=element_text(size=11)) +
   
   
