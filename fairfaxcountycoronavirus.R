@@ -10,17 +10,19 @@ df <- read_tsv("fairfaxcountycoronavirus.tsv")
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
   scale_x_date(date_labels="%d %b",date_breaks  ="1 day") + 
-  scale_y_continuous(breaks = seq(from = 0,to = 200,by = 10)) +
+  scale_y_continuous(breaks = seq(from = 0,to = 300,by = 10)) +
   
   geom_vline(xintercept = ymd('2020-03-16'), colour="blue") +
   geom_text(aes(x=ymd('2020-03-16'), label="\nSchools Closed", y=50), colour="blue", angle=90, text=element_text(size=11)) +
-  
   geom_vline(xintercept = ymd('2020-03-23'), colour="red") +
   geom_text(aes(x=ymd('2020-03-23'), label="\nBusinesses and playgrounds closed", y=50), colour="red", angle=90, text=element_text(size=11)) +
-  
   geom_vline(xintercept = ymd('2020-03-24'), colour="orange") +
   geom_text(aes(x=ymd('2020-03-24'), label="\nGov Buildings and parks closed", y=50), colour="orange", angle=90, text=element_text(size=11)) +
 
+  geom_vline(xintercept = ymd('2020-03-31'), colour="brown") +
+  geom_text(aes(x=ymd('2020-03-31'), label="\nStay at Home Order", y=50), colour="brown", angle=90, text=element_text(size=11)) +
+  
+  
   geom_vline(xintercept = ymd('2020-03-30'),colour="blue", linetype="dotted") +
   geom_text(aes(x=ymd('2020-03-30'), label="\n14 days after schools closed", y=50), colour="blue", angle=90, text=element_text(size=11)) +
   geom_vline(xintercept = ymd('2020-04-06'),colour="red", linetype="dotted") +
