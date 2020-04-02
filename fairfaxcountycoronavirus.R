@@ -4,13 +4,14 @@ if (any(installed_packages == FALSE)) { install.packages("pacman") }
 library(pacman)
 pacman::p_load(tidyverse, readr, ggplot2 ,lubridate, NLP, tm)
 
+setwd("C:/Users/psabela/Desktop/R workspace/fairfaxcountycovid19")
 
 df <- read_tsv("fairfaxcountycoronavirus.tsv")
 
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
   scale_x_date(date_labels="%d %b",date_breaks  ="1 day") + 
-  scale_y_continuous(breaks = seq(from = 0,to = 300,by = 10)) +
+  scale_y_continuous(breaks = seq(from = 0,to = 400,by = 10)) +
   
   geom_vline(xintercept = ymd('2020-03-16'), colour="blue") +
   geom_text(aes(x=ymd('2020-03-16'), label="\nSchools Closed", y=50), colour="blue", angle=90, text=element_text(size=11)) +
