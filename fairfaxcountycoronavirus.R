@@ -11,7 +11,7 @@ df <- read_tsv("fairfaxcountycoronavirus.tsv")
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
   scale_x_date(date_labels="%d %b",date_breaks  ="1 day") + 
-  scale_y_continuous(breaks = seq(from = 0,to = 1000,by = 50)) +
+  scale_y_continuous(breaks = seq(from = 0,to = 1100,by = 50)) +
   
   geom_vline(xintercept = ymd('2020-03-16'), colour="blue") +
   geom_text(aes(x=ymd('2020-03-16'), label="\nSchools Closed", y=250), colour="blue", angle=90, text=element_text(size=11)) +
@@ -30,9 +30,13 @@ df %>% ggplot() +
   geom_text(aes(x=ymd('2020-04-06'), label="\n14 days after businesses and parks closed", y=250), colour="red", angle=90, text=element_text(size=11)) +
   geom_vline(xintercept = ymd('2020-04-07'),colour="orange", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-04-07'), label="\n14 days after Gov buildings closed", y=250), colour="orange", angle=90, text=element_text(size=11)) +
+  geom_vline(xintercept = ymd('2020-04-14'),colour="brown", linetype="dotted", size = 1.5) +
+  geom_text(aes(x=ymd('2020-04-14'), label="\n14 days after stay at home order", y=250), colour="brown", angle=90, text=element_text(size=11)) +
   
   
   ggtitle(label = 'Fairfax County, Virginia, COVID-19 Cases',subtitle = "source: https://www.fairfaxcounty.gov/covid19/case-information (chart by Peter Sabela)") +
   ylab(label = "count") +
   theme(panel.grid.minor =   element_blank(),
-        panel.grid.major =   element_line(colour = "white",size=0.75))
+        panel.grid.major =   element_line(colour = "white",size=0.75)) +
+  scale_y_continuous(position = "right")
+
