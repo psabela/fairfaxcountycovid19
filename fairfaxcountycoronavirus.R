@@ -11,7 +11,7 @@ df <- read_tsv("fairfaxcountycoronavirus.tsv")
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
   scale_x_date(date_labels="%d %b",date_breaks  ="1 day") + 
-  scale_y_continuous(breaks = seq(from = 0,to = 1100,by = 50)) +
+  scale_y_continuous(breaks = seq(from = 0,to = 1400,by = 50)) +
   
   geom_vline(xintercept = ymd('2020-03-16'), colour="blue") +
   geom_text(aes(x=ymd('2020-03-16'), label="\nSchools Closed", y=250), colour="blue", angle=90, text=element_text(size=11)) +
