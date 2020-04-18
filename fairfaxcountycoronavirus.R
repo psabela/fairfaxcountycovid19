@@ -22,7 +22,6 @@ df %>% ggplot() +
   geom_vline(xintercept = ymd('2020-03-31'), colour="brown") +
   geom_text(aes(x=ymd('2020-03-31'), label="\nStay at Home Order", y=250), colour="brown", angle=90, text=element_text(size=11)) +
   
-  
   geom_vline(xintercept = ymd('2020-03-30'),colour="blue", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-03-30'), label="\n14 days after schools closed", y=250), colour="blue", angle=90, text=element_text(size=11)) +
   geom_vline(xintercept = ymd('2020-04-06'),colour="red", linetype="dotted", size = 1.5) +
@@ -32,10 +31,9 @@ df %>% ggplot() +
   geom_vline(xintercept = ymd('2020-04-14'),colour="brown", linetype="dotted", size = 1.5) +
   geom_text(aes(x=ymd('2020-04-14'), label="\n14 days after stay at home order", y=250), colour="brown", angle=90, text=element_text(size=11)) +
   
-  
   ggtitle(label = 'Fairfax County, Virginia, COVID-19 Cases',subtitle = "source: https://www.fairfaxcounty.gov/covid19/case-information (chart by Peter Sabela)") +
   ylab(label = "count") +
   theme(panel.grid.minor =   element_blank(),
         panel.grid.major =   element_line(colour = "white",size=0.75)) +
-  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 1600,by = 100)) 
+  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2000,by = 100)) 
   
