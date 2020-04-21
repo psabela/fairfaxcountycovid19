@@ -35,6 +35,6 @@ df %>% ggplot() +
   ylab(label = "count") +
   theme(panel.grid.minor =   element_blank(),
         panel.grid.major =   element_line(colour = "white",size=0.75)) +
-  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2000,by = 100)) 
+  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2500,by = 100)) 
 
   
