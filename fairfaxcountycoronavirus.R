@@ -10,7 +10,7 @@ df <- read_tsv("fairfaxcountycoronavirus.tsv")
 my <- 850
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
-  scale_x_date(date_labels="%d %b",date_breaks  ="1 day") + 
+  scale_x_date(date_labels="%m/%e",date_breaks  ="1 day") + 
   
   geom_vline(xintercept = ymd('2020-03-16'), colour="blue") +
   geom_text(aes(x=ymd('2020-03-16'), label="\nSchools Closed", y=my), colour="blue", angle=90, text=element_text(size=11)) +
@@ -34,7 +34,8 @@ df %>% ggplot() +
   ggtitle(label = 'Fairfax County, Virginia, COVID-19 Cases',subtitle = "source: https://www.fairfaxcounty.gov/covid19/case-information (chart by Peter Sabela)") +
   ylab(label = "count") +
   theme(panel.grid.minor =   element_blank(),
-        panel.grid.major =   element_line(colour = "white",size=0.75)) +
+        panel.grid.major =   element_line(colour = "white",size=0.75),
+        axis.text.x = element_text(angle = 90, hjust = 1)) +
   scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2500,by = 100)) 
 
-  
+
