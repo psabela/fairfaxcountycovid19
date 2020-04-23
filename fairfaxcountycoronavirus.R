@@ -8,6 +8,8 @@ setwd("C:/Users/psabela/Desktop/R workspace/fairfaxcountycovid19")
 
 df <- read_tsv("fairfaxcountycoronavirus.tsv")
 my <- 850
+deltas <- c(abs(diff(df$count)),0)
+
 df %>% ggplot() + 
   geom_line(aes(x = date, y = count)) + 
   scale_x_date(date_labels="%m/%e",date_breaks  ="1 day") + 
@@ -36,6 +38,7 @@ df %>% ggplot() +
   theme(panel.grid.minor =   element_blank(),
         panel.grid.major =   element_line(colour = "white",size=0.75),
         axis.text.x = element_text(angle = 90, hjust = 1)) +
-  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2500,by = 100)) 
+  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 2500,by = 100)) +
+  geom_col(aes(x = date, y = deltas))
 
 
