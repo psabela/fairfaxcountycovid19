@@ -38,7 +38,7 @@ df %>% ggplot() +
   theme(panel.grid.minor =   element_blank(),
         panel.grid.major =   element_line(colour = "white",size=0.75),
         axis.text.x = element_text(angle = 90, hjust = 1)) +
-  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 7000,by = 500)) +
+  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 7500,by = 500)) +
   geom_col(aes(x = date, y = deltas)) +
   geom_text(aes(x = date, y = deltas, label = deltas),angle=90, size=3,nudge_y = 300)
 
