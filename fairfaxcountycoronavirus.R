@@ -7,7 +7,7 @@ pacman::p_load(tidyverse, readr, ggplot2 ,lubridate, NLP, tm)
 setwd("C:/Users/psabela/Desktop/R workspace/fairfaxcountycovid19")
 
 df <- read_tsv("fairfaxcountycoronavirus.tsv")
-my <- 3000
+my <- 4000
 deltas <- c(abs(diff(df$count)),0)
 
 df %>% ggplot() + 
@@ -38,7 +38,7 @@ df %>% ggplot() +
   theme(panel.grid.minor =   element_blank(),
         panel.grid.major =   element_line(colour = "white",size=0.75),
         axis.text.x = element_text(angle = 90, hjust = 1)) +
-  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 8000,by = 500)) +
+  scale_y_continuous(position = "right", breaks = seq(from = 0,to = 8500,by = 500)) +
   geom_col(aes(x = date, y = deltas)) +
   geom_text(aes(x = date, y = deltas, label = deltas),angle=90, size=3,nudge_y = 300)
 
