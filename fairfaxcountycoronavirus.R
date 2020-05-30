@@ -7,7 +7,7 @@ pacman::p_load(tidyverse, readr, ggplot2 ,lubridate, NLP, tm)
 setwd("C:/Users/psabela/Desktop/R workspace/fairfaxcountycovid19")
 
 df <- read_tsv("fairfaxcountycoronavirus.tsv")
-my <- 5000
+my <- 7000
 deltas <- c(abs(diff(df$count)),0)
 
 df %>% ggplot() + 
